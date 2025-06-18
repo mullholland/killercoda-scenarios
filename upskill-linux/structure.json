@@ -1,0 +1,8 @@
+{
+  "title": "Upskill - Linux",
+  "description": "A collection of task to get a better understanding of linux and it workings. Without tha hassle of creating an own linux box in the wild and securing it.",
+  "items": [
+    { "path": "session01", "title": "Session 01 - Basic server information" },
+    { "path": "session02", "title": "Session 02 - Basic orientation" }
+  ]
+}

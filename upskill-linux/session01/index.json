@@ -1,0 +1,39 @@
+{
+  "title": "Where am i?",
+  "description": "Basic blocks about the linux server system you are accessing",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "setup.sh"
+    },
+    "steps": [
+      {
+        "text": "step01.md"
+      },
+      {
+        "text": "step02.md"
+      },
+      {
+        "text": "step03.md"
+      },
+      {
+        "text": "step04.md"
+      },
+      {
+        "text": "step05.md"
+      },
+      {
+        "text": "step06.md"
+      },
+      {
+        "text": "step07.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}

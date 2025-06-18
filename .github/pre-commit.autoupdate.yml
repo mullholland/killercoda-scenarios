@@ -1,0 +1,27 @@
+name: pre-commit autoupdate
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * 0' # Runs weekly on Sunday
+
+jobs:
+  autoupdate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Install pre-commit
+        run: pip install pre-commit
+      - name: Run pre-commit autoupdate
+        run: pre-commit autoupdate
+      - name: Commit changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add .pre-commit-config.yaml
+          git commit -m 'chore: pre-commit autoupdate' || echo "No changes to commit"
+          git push

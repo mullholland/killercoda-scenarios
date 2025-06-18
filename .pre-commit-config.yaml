@@ -1,0 +1,25 @@
+---
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    # sha: master  # Use the ref you want to point at
+    rev: v4.4.0
+    hooks:
+      - { id: check-case-conflict }
+      - { id: check-merge-conflict }
+      - { id: check-symlinks }
+      - { id: check-json }
+      - { id: check-yaml }
+      - { id: detect-private-key }
+      - { id: end-of-file-fixer }
+      - { id: trailing-whitespace }
+  - repo: https://github.com/compilerla/conventional-pre-commit
+    rev: v4.2.0
+    hooks:
+      - id: conventional-pre-commit
+        stages: [commit-msg]
+        args: [--strict, --force-scope, feat, fix, chore, test, custom]
+  -   repo: https://github.com/igorshubovych/markdownlint-cli
+      rev: v0.41.0
+      hooks:
+      -   id: markdownlint
+          args: [ --disable=MD013, --disable=MD002,--disable=MD032,--disable=MD005,--disable=MD009, --disable=MD041 ]
